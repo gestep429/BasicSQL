@@ -1,0 +1,163 @@
+create table famous_people 
+    (PersonID integer primary key asc, LastName text, FirstName text, Birthday text);
+    
+Insert into "famous_people" values (1, "Cruis", "Tom", "7/3/1962");
+Insert into "famous_people" values (2, "Johansson", "Scarlet", "11/22/1984");
+Insert into "famous_people" values (3, "Downy Jr.", "Robert", "4/4/1965");
+Insert into "famous_people" values (4, "Jackson", "Samuel", "12/21/1948");
+Insert into "famous_people" values (5, "Pratt", "Chris", "6/21/1979");
+Insert into "famous_people" values (6, "Hanks", "Tom", "7/9/1956");
+Insert into "famous_people" values (7, "Johnson", "Dwayne", "5/2/1972");
+Insert into "famous_people" values (8, "Smith", "Will", "9/25/1968");
+Insert into "famous_people" values (9, "Lawrence", "Jennifer", "8/15/1990");
+Insert into "famous_people" values (10, "Afflack", "Ben", "8/15/1972");
+Insert into "famous_people" values (11, "Allen", "Tim", "6/13/1953");
+Insert into "famous_people" values (12, "Pattinson", "Robert", "5/13/1986");
+Insert into "famous_people" values (13, "Williams", "Robin", "7/21/1957");
+Insert into "famous_people" values (14, "Combs", "Luke", "3/2/1990");
+Insert into "famous_people" values (15, "Gomez", "Selena", "7/22/1992");
+Insert into "famous_people" values (16, "Smith", "Sam", "5/19/1992");
+Insert into "famous_people" values (17, "Bryan", "Zach", "4/2/1996");
+Insert into "famous_people" values (18, "Hozier", "NULL", "3/17/1990");
+Insert into "famous_people" values (19, "Adele", "NULL", "3/5/1988");
+Insert into "famous_people" values (20, "Capaldi", "Lewis", "10/7/1996");
+Insert into "famous_people" values (21, "Cyrus", "Miley", "11/23/1992");
+Insert into "famous_people" values (22, "Keith", "Toby", "7/8/1961");
+Insert into "famous_people" values (23, "Hardy", "NULL", "9/13/1990");
+Insert into "famous_people" values (24, "Bryan", "Luke", "7/17/1976");
+Insert into "famous_people" values (25, "Wallen", "Morgan", "5/13/1993");
+Insert into "famous_people" values (26, "Drake", "NULL", "10/24/1986"); 
+Insert into "famous_people" values (27, "Gaga", "Lady", "3/28/1986");
+
+create table "movies"
+    (movieID integer, title text, actor integer, year integer, rating integer);
+/* rating is from rotten tomatos */
+
+Insert into "movies" values (1, "Top Gun: Maverick", 1, 2022, 96);
+Insert into "movies" values (2, "Mission Impossible", 1, 1996, 66);
+Insert into "movies" values (3, "The Outsiders", 1, 1983, 70);
+Insert into "movies" values (4, "Black Widow", 2, 2021, 79);
+Insert into "movies" values (5, "Advengers: Endgame", 2, 2019, 94);
+Insert into "movies" values (6, "Lucy", 2, 2014, 67);
+Insert into "movies" values (7, "Advengers: Endgame", 3, 2019, 94);
+Insert into "movies" values (8, "Iron Man", 3, 2008, 94);
+Insert into "movies" values (9, "Sherlock Homes", 3, 2009, 69);
+Insert into "movies" values (10, "Coach Carter", 4, 2005, 64);
+Insert into "movies" values (11, "Kingsman: The Secret Service", 4, 2014, 75);
+Insert into "movies" values (12, "Pulp Fiction", 4, 1994, 92);
+Insert into "movies" values (13, "Advengers: Endgame", 5, 2019, 94);
+Insert into "movies" values (14, "Gardians of the Galaxy Vol. 3", 5, 2023, 82);
+Insert into "movies" values (15, "The Lego Movie", 5, 2014, 96);
+Insert into "movies" values (16, "Forrest Gump", 6, 1994, 71);
+Insert into "movies" values (17, "Elvis", 6, 2022, 77);
+Insert into "movies" values (18, "Toy Story", 6, 1995, 100);
+Insert into "movies" values (19, "Black Adam", 7, 2022, 38);
+Insert into "movies" values (20, "Moana", 7, 2016, 95);
+Insert into "movies" values (21, "Jungle Cruise", 7, 2021, 62);
+Insert into "movies" values (22, "Men in Black", 8, 1997, 91);
+Insert into "movies" values (23, "Emancipation", 8, 2022, 45);
+Insert into "movies" values (24, "I, Robot", 8, 2004, 56);
+Insert into "movies" values (25, "Hunger Games", 9, 2012, 84);
+Insert into "movies" values (26, "Don't Look Up", 9, 2021, 56);
+Insert into "movies" values (27, "Silver Linnings Playbook", 9, 2012, 92);
+Insert into "movies" values (28, "Gone Girl", 10, 2014, 88);
+Insert into "movies" values (29, "Pearl Harbor", 10, 2001, 24);
+Insert into "movies" values (30, "Deep Water", 10, 2022, 36);
+Insert into "movies" values (31, "Santa Clause", 11, 1994, 73);
+Insert into "movies" values (32, "The Shagy Dog", 11, 2006, 26);
+Insert into "movies" values (33, "Cars", 11, 2006, 75);
+Insert into "movies" values (34, "Twilight", 12, 2008, 49);
+Insert into "movies" values (35, "Remember Me", 12, 2010, 26);
+Insert into "movies" values (36, "Tenet", 12, 2020, 69);
+Insert into "movies" values (37, "Mrs. Doubtfire", 13, 1993, 70);
+Insert into "movies" values (38, "Good Will Huntings", 13, 1997, 97);
+Insert into "movies" values (39, "Night at the Museum", 13, 2006, 43);
+
+create table "albums"(albumID integer, album_name text, artist integer, total_songs integer, release_date integer);
+
+Insert into "albums" values (1, "This One's for You", 14, 12, 2017);
+Insert into "albums" values (2, "What You See is What You Get", 14, 18, 2019);
+Insert into "albums" values (3, "Growin' Up", 14, 12, 2022);
+Insert into "albums" values (4, "Gettin' Old", 14, 18, 2023);
+Insert into "albums" values (5, "Stars Dance", 15, 13, 2013);
+Insert into "albums" values (6, "Revival", 15, 14, 2015);
+Insert into "albums" values (7, "Rare", 15, 17, 2020);
+Insert into "albums" values (8, "In The Lonely Hour", 16, 23, 2015);
+Insert into "albums" values (9, "The Trill of it All", 16, 14, 2017);
+Insert into "albums" values (10, "Love Goes", 16, 17, 2020);
+Insert into "albums" values (11, "Gloria", 16, 13, 2023);
+Insert into "albums" values (12, "DeAnn", 17, 12, 2019);
+Insert into "albums" values (13, "Elisabeth", 17, 18, 2020);
+Insert into "albums" values (14, "American Heartbreak", 17, 34, 2022);
+Insert into "albums" values (15, "Hoizer", 18, 13, 2014);
+Insert into "albums" values (16, "Wasteland, Baby!", 18, 14, 2019);
+Insert into "albums" values (17, "19", 19, 26, 2008);
+Insert into "albums" values (18, "21", 19, 19, 2011);
+Insert into "albums" values (19, "25", 19, 14, 2015);
+Insert into "albums" values (20, "30", 19, 15, 2021);
+Insert into "albums" values (21, "Divinely Uninspired to a Hellish Extent", 20, 12, 2019);
+Insert into "albums" values (22, "Meet Miley Cyrus", 21, 20, 2007);
+Insert into "albums" values (23, "Breakout", 21, 12, 2008);
+Insert into "albums" values (24, "Can't Be Tamed", 21, 12, 2010);
+Insert into "albums" values (25, "Bangerz", 21, 13, 2013);
+Insert into "albums" values (26, "Miley Cyrus & Her Dead Petz", 21, 23, 2015);
+Insert into "albums" values (27, "Younger Now", 21, 11, 2017);
+Insert into "albums" values (28, "Plastic Hearts", 21, 15, 2020);
+Insert into "albums" values (29, "Endless Summer Vacation", 21, 12, 2023);
+Insert into "albums" values (30, "Toby Keith", 22, 10, 1993);
+Insert into "albums" values (31, "Boomtown", 22, 10, 1994);
+Insert into "albums" values (32, "Christmas to Christmas", 22, 12, 1995);
+Insert into "albums" values (33, "Blue Moon", 22, 10, 1996);
+Insert into "albums" values (34, "Dream Walkin'", 22, 11, 1997);
+Insert into "albums" values (35, "How Do You Like Me Now?", 22, 12, 1999);
+Insert into "albums" values (36, "Pull My Chain", 22, 13, 2001);
+Insert into "albums" values (37, "Unleashed", 22, 13, 2002);
+Insert into "albums" values (38, "Shock'n Y'all", 22, 12, 2003);
+Insert into "albums" values (39, "Honkytonk University", 22, 12, 2005);
+Insert into "albums" values (40, "White Trash with Money", 22, 20, 2006);
+Insert into "albums" values (41, "Big Dog Daddy", 22, 11, 2007);
+Insert into "albums" values (42, "A Rock", 23, 12, 2020);
+Insert into "albums" values (43, "The Mockingbird & the Crow", 23, 17, 2023);
+Insert into "albums" values (44, "I'll Stay Me", 24, 11, 2007);
+Insert into "albums" values (45, "Doin' My Thing", 24, 13, 2009);
+Insert into "albums" values (46, "Tailgates & Tanlines", 24, 13, 2011);
+Insert into "albums" values (47, "Crash My Party", 24, 17, 2013);
+Insert into "albums" values (48, "Kill the Lights", 24, 17, 2015);
+Insert into "albums" values (49, "What Makes You Country", 24, 15, 2017);
+Insert into "albums" values (50, "Born Here To Die Here", 24, 10, 2020);
+Insert into "albums" values (51, "If I Know Me", 25, 14, 2018);
+Insert into "albums" values (52, "Dangerous: The Double Album", 25, 33, 2021);
+Insert into "albums" values (53, "One Thing at a Time", 25, 36, 2023);
+Insert into "albums" values (54, "Thank Me Later", 26, 14, 2010);
+Insert into "albums" values (55, "Take Care", 26, 19, 2011);
+Insert into "albums" values (56, "Nothing Was The Same", 26, 15, 2013);
+Insert into "albums" values (57, "Views", 26, 20, 2016);
+Insert into "albums" values (58, "Scorpion", 26, 25, 2018);
+Insert into "albums" values (59, "Certified Lover Boy", 26, 21, 2021);
+Insert into "albums" values (60, "Honestly, Nevermind", 26, 14, 2022); 
+Insert into "albums" values (61, "The Fame", 27, 15, 2008);
+Insert into "albums" values (62, "Born This Way", 27, 14, 2011);
+Insert into "albums" values (63, "Artpop", 27, 14, 2013);
+Insert into "albums" values (64, "Joanne", 27, 14, 2016);
+Insert into "albums" values (65, "Chromatica", 27, 16, 2020);
+
+
+/* the follow code will sort all the movies created after 2000 by rating with no repeats*/ 
+select distinct(title), year, rating from movies where year >= 2000 order by rating;
+
+
+/* something I wanted to do was see which month contained the most birthdays from the famous_people, but I can not format the birthday column as  a date so when we do to sort it by birthday it does not work very well, I could go back and edit my table to list the day month and year, but in a different versio nyou would just list that column as date and you would not have this problem*/ 
+select FirstName, LastName, Birthday from famous_people order by birthday;
+
+
+/* the following code will combine the two tables with the names of the actor with the movies they were in and the sort based on year released*/
+select famous_people.FirstName, famous_people.LastName, movies.title, movies.year
+from famous_people
+inner join movies on famous_people.personID = movies.actor
+order by year; 
+
+
+/* this  code will list all the artist's names and then order the list by the total # of song they wrote in their studio albumns which was done by joining the two tables*/ 
+select famous_people.FirstName, famous_people.LastName, sum(albums.total_songs) as songs_written from famous_people
+inner join albums on famous_people.personID = albums.artist
+group by artist order by songs_written;
