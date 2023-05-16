@@ -1,3 +1,5 @@
+/*This is my spinoff of the project in Khan Academy's "Relational queries in SQL". This database contains three different tables and I show my SQL knowledge by running a few results queries on the tables I made*/
+
 create table famous_people 
     (PersonID integer primary key asc, LastName text, FirstName text, Birthday text);
     
