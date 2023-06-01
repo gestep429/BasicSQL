@@ -1,0 +1,42 @@
+/* Here I am going to show the code I would use to answer the following questions. 
+In this example assume two different tables- "netflix_titles_info" and "netflix_people" */
+
+/* The feilds for "netflix_titles_info" is as follows: 
+show_id, type(movie vs tv show), title, country, date_added, 
+release_year, rating, duration, listed_in, description */
+/* The feilds for "netflix_people" is as follows: 
+show_id, director, cast */
+
+
+
+/* How many movie titles are there in the database (movies not tv shows) */
+select count(*) from "netflix_titles_info" where type = "movie";
+
+
+/* When was the most recent batch of tv shows and/or movies added to the database? */
+select max(date(date_added)) from "netflix_titles_info";
+
+
+/* List all the movies and tv shows in alphabetical order. */
+select title from "netflix_titles_info" order by title asc;
+
+
+/* Who was the Director for the movie Bright Star? */
+select director from "netflix_people" 
+left join "netflix_titles_info" 
+on "netflix_people".show_id = "netflix_titles_info".show_id 
+where "netflix_titles_info".title= "Bright Star";
+
+
+/* What is the oldest movie in the database and what year was it made? */
+select title, release_year from "netflix_titles_info" 
+where type = "movie"
+order by release_year asc
+limit 1;
+
+/* let's say that there were five movies relases in 5 the oldest year (lets say 1957), the query above would only give you one of the five so you could instead do this subquery below to get them all*/
+
+select title, release_year from "netflix_titles_info" 
+where type= "movie" and release_year <= 
+(select min(release_year) from "netflix_titles_info" 
+where type= "movie");
