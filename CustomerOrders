@@ -1,0 +1,42 @@
+/* Here is another project from The Break Into Tech Certfication course I have competed, 
+you can see basic question I may get and then the code I would use to figure it out*/
+
+
+/*How many orders were places in January*/
+select count(orderid) from JanSales
+where length(orderid) = 6 
+and orderid <> 'Order ID';
+
+/*How many of those orders were for an iphone*/
+select count(orderid) from JanSales
+where length(orderid) = 6 
+and orderid <> 'Order ID'
+and Product='iPhone'; 
+
+/*Select the customer account numbers for all the orders that were placed in February*/
+select acctnum from customers 
+inner join FebSales 
+on customers.order_id=FebSales.orderID
+where length(orderid) = 6 
+and orderid <> 'Order ID';
+
+/*Which product was the cheapest one sold in January, and what was the price?*/
+select distinct product, price from JanSales 
+order by price asc 
+limit 1;
+
+/*What is the total revenue for each product sold in January?*/
+select product, sum(Quantity)*price as revenue from JanSales 
+Group by product;
+
+/*Which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many were sold, and what was the total revenue?*/
+select product, sum(Quantity) as total, sum(Quantity)*price as revenue from FebSales 
+where location = '548 Lincoln St, Seattle, WA 98101'
+group by product;
+
+/*How many customers ordered more than 2 products at a time in February, what was the average spent by those customers?*/
+select count(distinct customers.acctnum) as TotalOrders, avg(quantity*price) as AvgSpent from FebSales 
+left join customers 
+on FebSales.orderID=customers.order_id
+where FebSales.Quantity>2
+and length(orderid) = 6 and orderid <> 'Order ID';
