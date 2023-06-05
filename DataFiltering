@@ -1,0 +1,32 @@
+/*Practice using % and like statements*/
+
+/* select orderdates of everything sold between 2/13/19 to 2/18/19*/
+select orderdate
+from FebSales
+where orderdate between '02/13/19 00:00' and '02/18/19 00:00';
+
+/* select location of everything sold on 2/18/19 at 1:35*/
+select location 
+from FebSales
+where orderdate = '02/18/19 01:35';
+
+/*calculate total # products sold on 2/18/19*/
+select sum(quantity)
+from FebSales 
+where orderdate like '02/18/19%';
+
+/*select product without duplicates where Batteries is mentioned*/
+select distinct Product 
+from FebSales
+where product like '%Batteries%';
+
+/* show products and price-with no duplicates- with everything that has .99 at the end of price*/
+select distinct Product, Price 
+from FebSales 
+where Price like '%.99';
+
+/*list all the products and quanity of each sold in LA in February*/
+select distinct product, sum(quantity)
+from FebSales
+where location like '%Los Angeles%'
+group by product;
