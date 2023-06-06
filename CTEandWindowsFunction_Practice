@@ -80,3 +80,27 @@ with safety_average_cte as (
 select street, rating, 'safe lane' as 'label' from safety_average_cte
     where rating >= 4
     order by rating desc;
+    
+/*Practice using windows function-
+Here we can visualize the difference between using a windows function and not using one
+we can see how the avg are affected*/
+SELECT street, safetyrating,
+AVG(safetyrating) OVER (PARTITION BY street) as "Average_safety_rating"
+FROM CityBikeLanes
+WHERE street='2nd';
+
+SELECT street, safetyrating, AVG(safetyrating)
+FROM CityBikeLanes
+WHERE street='2nd'
+GROUP BY street, safetyrating;
+
+/*You need to give your boss the list of all the bike lanes, both safety ratings 
+for each lane given by the two technicians, the average safety rating for each lane, 
+and a label with the recommendation as "Remove", "Leave As-Is", or "Improvements Needed".*/
+select street, safetyrating,
+AVG(safetyrating) OVER (PARTITION BY street) as "Average_safety_rating",
+Case when AVG(safetyrating) OVER (PARTITION BY street) >= 4 then 'Leave As-Is'
+    when AVG(safetyrating) OVER (PARTITION BY street) < 2.5 then 'Remove'
+    Else 'Improvements Needed'
+    End as 'recommendation'
+FROM CityBikeLanes
