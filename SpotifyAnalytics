@@ -1,0 +1,50 @@
+CREATE TABLE BIT_DB.Spotifydata (
+id integer PRIMARY KEY,
+artist_name varchar NOT NULL,
+track_name varchar NOT NULL,
+track_id varchar NOT NULL,
+popularity integer NOT NULL,
+danceability decimal(4,3) NOT NULL,
+energy decimal(4,3) NOT NULL,
+song_key integer NOT NULL,
+loudness decimal(5,3) NOT NULL,
+song_mode integer NOT NULL,
+speechiness decimal(5,4) NOT NULL,
+acousticness decimal(6,5) NOT NULL,
+instrumentalness decimal(8,7) NOT NULL,
+liveness decimal(5,4) NOT NULL,
+valence decimal(4,3) NOT NULL,
+tempo decimal(6,3) NOT NULL,
+duration_ms integer NOT NULL,
+time_signature integer NOT NULL );
+
+/*First I created a new table and then imported a csv showing the Spotify top 50 songs in 2021 from Kaggle, 
+then I showed how I would answer some questions from the data below*/
+
+/*Which key is most common?*/
+select song_key, count(song_key) as sum from Spotifydata
+group by song_key 
+order by sum desc
+limit 1;
+
+/*Who is the most common artist and what is their popularity?*/
+select artist_name, count(artist_name) as sum, popularity from Spotifydata
+group by artist_name 
+order by sum desc
+limit 1;
+
+/*What is the tempo of the most liveness song?*/
+select track_name, max(liveness), tempo from spotifydata;
+
+/*What is the Average popularity, dancibility, and energy?*/
+select avg(popularity), avg(danceability), avg(energy) from spotifydata;
+
+/*List all the songs above average of dancibility*/
+select track_name, ((select avg(danceability) from spotifydata)-danceability) as avg_diff from spotifydata
+where avg_diff > 0
+order by avg_diff desc;
+
+/*Who are the top 10 artists on the top 50 playlist strictly based on popularity (no duplicates)?*/
+select distinct artist_name from spotifydata 
+order by popularity desc
+limit 10;
